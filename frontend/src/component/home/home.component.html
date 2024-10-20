@@ -1,6 +1,10 @@
 <div class="w-full flex gap-[10px]">
-  <div class="w-2/5">
-    <app-job-listing-card />
+  <div class="w-2/5 overflow-y-auto custom-scroll">
+    @if(jobsList.length > 0) {
+      <app-job-listing-card *ngFor="let job of jobsList" [job]="job"></app-job-listing-card>
+    } @else{
+      <p>No jobs available at the moment.</p>
+    }
   </div>
   <div class="w-3/5">
     <app-job-detail-card />
