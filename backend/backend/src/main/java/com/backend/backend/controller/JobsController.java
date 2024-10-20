@@ -23,20 +23,20 @@ public class JobsController {
     }
 
     @GetMapping()
-    public ResponseEntity<String> getJobs() {
-        return ResponseEntity.ok("{\"message\": \"hello\"}");
+    public ResponseEntity<List<JobDto>> getJobs() {
+        List<Job> jobList = this.jobsService.getAllJobs();
+        List<JobDto> jobDtoList = jobList.stream()
+                .map(jobMapper::convertToDTO)
+                .toList();
+
+        return ResponseEntity.ok(jobDtoList);
     }
 
     @PostMapping()
     public ResponseEntity<JobDto> addJob(@RequestBody JobDto jobDTO) {
-        // Convert DTO to entity
         Job job = jobMapper.converToEntity(jobDTO);
-
-        // Save the job
         Job savedJob = jobsService.saveJob(job);
-        // Convert the saved entity back to DTO
         JobDto savedJobDto = jobMapper.convertToDTO(savedJob);
-        // Return the saved job as a ResponseEntity
         return ResponseEntity.ok(savedJobDto);
     }
 

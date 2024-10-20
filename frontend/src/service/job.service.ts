@@ -14,12 +14,11 @@ export class JobService {
   constructor(private http: HttpClient) { }
 
   getAllJobs() {
-    return this.http.get<string>(`${this.baseUrl}/job`);
+    return this.http.get<JobDto[]>(`${this.baseUrl}/job`);
   }
 
   createJob(formValues: any): Observable<JobDto> {
     let newJobDto = new JobDto(formValues.title,formValues.city,formValues.school,formValues.minSalary,formValues.maxSalary,formValues.jobType,formValues.workMode,formValues.minHours, formValues.maxHours)
-    console.log('this was created: ', newJobDto)
     return this.http.post<JobDto>(`${this.baseUrl}/job`, newJobDto);
   }
 }
