@@ -1,0 +1,70 @@
+<form class="max-w-sm mx-auto" [formGroup]="jobForm" (ngSubmit)="submitForm()" >
+  <div class="mb-5">
+    <label for="title"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Job Title</label>
+    <input type="text" formControlName="title" id="title" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Enter job title" required />
+  </div>
+
+  <div class="mb-5">
+    <label for="city" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">City</label>
+    <input type="text" formControlName="city"  id="city" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Enter city" required />
+  </div>
+
+  <div class="mb-5">
+    <label for="school" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">School</label>
+    <input type="text" formControlName="school"  id="school" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Enter school name" required />
+  </div>
+
+  <div class="mb-5">
+    <label for="minSalary" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Min Salary (€)</label>
+    <input type="number" formControlName="minSalary" id="minSalary" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Enter minimum salary" required />
+  </div>
+
+  <div class="mb-5">
+    <label for="maxSalary" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Max Salary (€)</label>
+    <input type="number" formControlName="maxSalary"  id="maxSalary" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Enter maximum salary" required />
+  </div>
+
+  <div class="mb-5">
+    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Job Type</label>
+    <div class="flex items-center mb-2">
+      <input id="full-time" type="radio" formControlName="jobType" [value]="jobTypes.FULL_TIME" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+      <label for="full-time" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Full-Time</label>
+    </div>
+    <div class="flex items-center mb-2">
+      <input id="part-time" type="radio" formControlName="jobType" [value]="jobTypes.PART_TIME" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+      <label for="part-time" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Part-Time</label>
+    </div>
+    <div class="flex items-center">
+      <input id="both-time" type="radio" formControlName="jobType" [value]="jobTypes.BOTH" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+      <label for="both-time" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Both</label>
+    </div>
+  </div>
+
+  <div class="mb-5">
+    <label for="min-hours" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Minimum Hours per Week</label>
+    <input type="number" formControlName="minHours" id="min-hours" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Enter minimum hours per week" required />
+  </div>
+
+  <div class="mb-5">
+    <label for="max-hours" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Maximum Hours per Week</label>
+    <input type="number" formControlName="maxHours" id="max-hours" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Enter maximum hours per week" required />
+  </div>
+
+  <div class="mb-5" >
+    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Work Mode</label>
+    <div class="flex items-center mb-4">
+      <input id="onsite" type="radio" formControlName="workMode" [value]="workModes.ONSITE" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+      <label for="onsite" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Onsite</label>
+    </div>
+    <div class="flex items-center mb-4">
+      <input id="remote" type="radio" formControlName="workMode" [value]="workModes.REMOTE" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+      <label for="remote" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remote</label>
+    </div>
+    <div class="flex items-center">
+      <input id="hybrid" type="radio" formControlName="workMode" [value]="workModes.HYBRID" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+      <label for="hybrid" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Hybrid</label>
+    </div>
+  </div>
+
+  <button type="submit"  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Create Job Post</button>
+</form>
