@@ -18,7 +18,7 @@ export class JobService {
   }
 
   createJob(formValues: any): Observable<JobDto> {
-    let newJobDto = new JobDto(formValues.title,formValues.city,formValues.school,formValues.minSalary,formValues.maxSalary,formValues.jobType,formValues.workMode,formValues.minHours, formValues.maxHours)
+    let newJobDto = new JobDto(formValues.title,formValues.city,formValues.school,formValues.minSalary,formValues.maxSalary,formValues.jobType,formValues.workMode,formValues.minHours, formValues.maxHours, formValues.description,formValues.benefits)
     return this.http.post<JobDto>(`${this.baseUrl}/job`, newJobDto);
   }
 }

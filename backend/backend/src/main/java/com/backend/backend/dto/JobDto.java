@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,4 +21,6 @@ public class JobDto {
     private String workMode; // ONSITE, REMOTE, or HYBRID
     private Integer minHours;
     private Integer maxHours;
+    private String description;
+    private List<String> benefits;
 }

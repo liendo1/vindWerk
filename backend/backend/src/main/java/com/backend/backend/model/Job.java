@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Table(name = "jobs")
 @Data
@@ -31,4 +33,9 @@ public class Job {
 
     private Integer minHours;
     private Integer maxHours;
+
+    private String description;
+
+    @OneToMany(mappedBy = "job", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<JobBenefit> jobBenefits;
 }

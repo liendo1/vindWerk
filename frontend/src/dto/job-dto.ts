@@ -12,6 +12,8 @@ export class JobDto {
   workMode: WorkMode; // ONSITE, REMOTE, or HYBRID
   minHours:number;
   maxHours:number;
+  description: string;
+  benefits: string[];
 
   constructor(
     title: string,
@@ -23,6 +25,8 @@ export class JobDto {
     workMode: WorkMode,
     minHours: number,
     maxHours: number,
+    description: string,
+    benefits: string[]
   ) {
     this.title = title;
     this.city = city;
@@ -33,5 +37,7 @@ export class JobDto {
     this.workMode = workMode;
     this.minHours = minHours;
     this.maxHours = maxHours;
+    this.description = description;
+    this.benefits = benefits;
   }
 }
