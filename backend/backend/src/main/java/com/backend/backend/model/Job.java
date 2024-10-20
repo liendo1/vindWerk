@@ -29,5 +29,6 @@ public class Job {
     @Enumerated(EnumType.STRING)
     private WorkMode workMode;
 
-
+    private Integer minHours;
+    private Integer maxHours;
 }

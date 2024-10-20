@@ -25,14 +25,15 @@ export class JobCreateComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private jobService: JobService) {
     this.jobForm = this.fb.group({
-      title: [''],
-      city: [''],
-      school: [''],
-      minSalary: [''],
-      maxSalary: [''],
-      hours: [''],
-      jobType: [''],
-      workMode:['']
+      title: ['', Validators.required],
+      city: ['', Validators.required],
+      school: ['', Validators.required],
+      minSalary: ['', [Validators.required, Validators.min(0)]],
+      maxSalary: ['', [Validators.required, Validators.min(0)]],
+      jobType: ['', Validators.required],
+      workMode: ['', Validators.required],
+      minHours: ['', [Validators.required, Validators.min(0)]],
+      maxHours: ['', [Validators.required, Validators.min(0)]]
     });
   }
 
@@ -40,10 +41,7 @@ export class JobCreateComponent implements OnInit {
 
   submitForm(){
     let formValues = this.jobForm.value;
-    this.jobService.createJob(formValues).subscribe( result => {
-      console.log("this job has been added: ", result)
-    })
-
+    this.jobService.createJob(formValues).subscribe()
   }
 
 

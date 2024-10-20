@@ -18,6 +18,8 @@ public class JobMapper {
         job.setMaxSalary(jobDto.getMaxSalary());
         job.setJobType(JobTypes.valueOf(jobDto.getType()));
         job.setWorkMode(WorkMode.valueOf(jobDto.getWorkMode()));
+        job.setMinHours(jobDto.getMinHours());
+        job.setMaxHours(jobDto.getMaxHours());
         return job;
     }
 
@@ -25,6 +27,9 @@ public class JobMapper {
         JobDto jobDTO = new JobDto();
         jobDTO.setId(job.getId());
         jobDTO.setTitle(job.getTitle());
+        jobDTO.setMinHours(job.getMinHours());
+        jobDTO.setMaxHours(job.getMaxHours());
+        jobDTO.setSchool(job.getSchool());
         jobDTO.setCity(job.getCity());
         jobDTO.setMinSalary(job.getMinSalary());
         jobDTO.setMaxSalary(job.getMaxSalary());

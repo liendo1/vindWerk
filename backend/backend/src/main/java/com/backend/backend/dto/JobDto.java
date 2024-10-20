@@ -17,4 +17,6 @@ public class JobDto {
     private String type; // FULL_TIME or PART_TIME
     private Integer hours;
     private String workMode; // ONSITE, REMOTE, or HYBRID
+    private Integer minHours;
+    private Integer maxHours;
 }

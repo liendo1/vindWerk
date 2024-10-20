@@ -9,8 +9,9 @@ export class JobDto {
   minSalary: number;
   maxSalary: number;
   type: JobType; // FULL_TIME or PART_TIME
-  hours: number;
   workMode: WorkMode; // ONSITE, REMOTE, or HYBRID
+  minHours:number;
+  maxHours:number;
 
   constructor(
     title: string,
@@ -19,8 +20,9 @@ export class JobDto {
     minSalary: number,
     maxSalary: number,
     type: JobType,
-    hours: number,
-    workMode: WorkMode
+    workMode: WorkMode,
+    minHours: number,
+    maxHours: number,
   ) {
     this.title = title;
     this.city = city;
@@ -28,7 +30,8 @@ export class JobDto {
     this.minSalary = minSalary;
     this.maxSalary = maxSalary;
     this.type = type;
-    this.hours = hours;
     this.workMode = workMode;
+    this.minHours = minHours;
+    this.maxHours = maxHours;
   }
 }
