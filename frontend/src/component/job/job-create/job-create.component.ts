@@ -36,8 +36,8 @@ export class JobCreateComponent implements OnInit {
       minHours: ['', [Validators.required, Validators.min(0)]],
       maxHours: ['', [Validators.required, Validators.min(0)]],
       description: ['', Validators.required],
-      benefits: this.fb.array([]),
-      expectations: this.fb.array([]),
+      benefits: this.fb.array([this.fb.control('')]),
+      expectations: this.fb.array([this.fb.control('')]),
     });
 
   }
@@ -61,7 +61,9 @@ export class JobCreateComponent implements OnInit {
   }
 
   removeExpectation(index: number) {
-    this.expectations.removeAt(index);
+    if (this.expectations.length > 1) {
+      this.expectations.removeAt(index);
+    }
   }
 
   addBenefit(): void {
@@ -69,6 +71,8 @@ export class JobCreateComponent implements OnInit {
   }
 
   removeBenefit(index: number): void {
-    this.benefits.removeAt(index);
+    if (this.benefits.length > 1) { 
+      this.benefits.removeAt(index);
+    }
   }
 }
