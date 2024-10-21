@@ -2,7 +2,6 @@ import {Component, Injectable, OnDestroy, OnInit} from '@angular/core';
 import {Form, FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 
 import {JobService} from '../../../service/job.service';
-import {reportUnhandledError} from 'rxjs/internal/util/reportUnhandledError';
 import {WorkMode} from '../../../enums/work-mode.enum';
 import {JobType} from '../../../enums/job-type.enum';
 import {NgForOf} from '@angular/common';
