@@ -1,5 +1,5 @@
 import {Component, Injectable, OnDestroy, OnInit} from '@angular/core';
-import {FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {Form, FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 
 import {JobService} from '../../../service/job.service';
 import {reportUnhandledError} from 'rxjs/internal/util/reportUnhandledError';
@@ -37,7 +37,8 @@ export class JobCreateComponent implements OnInit {
       minHours: ['', [Validators.required, Validators.min(0)]],
       maxHours: ['', [Validators.required, Validators.min(0)]],
       description: ['', Validators.required],
-      benefits: this.fb.array([])
+      benefits: this.fb.array([]),
+      expectations: this.fb.array([]),
     });
 
   }
@@ -50,6 +51,18 @@ export class JobCreateComponent implements OnInit {
   }
   get benefits(): FormArray {
     return this.jobForm.get('benefits') as FormArray;
+  }
+
+  get expectations():FormArray {
+    return this.jobForm.get('expectations') as FormArray;
+  }
+
+  addExpectation(){
+    this.expectations.push(this.fb.control(''));
+  }
+
+  removeExpectation(index: number) {
+    this.expectations.removeAt(index);
   }
 
   addBenefit(): void {
