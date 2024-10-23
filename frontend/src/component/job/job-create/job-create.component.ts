@@ -5,6 +5,7 @@ import {JobService} from '../../../service/job.service';
 import {reportUnhandledError} from 'rxjs/internal/util/reportUnhandledError';
 import {WorkMode} from '../../../enums/work-mode.enum';
 import {JobType} from '../../../enums/job-type.enum';
+import {JobDto} from '../../../dto/job-dto';
 
 
 
@@ -41,7 +42,9 @@ export class JobCreateComponent implements OnInit {
 
   submitForm(){
     let formValues = this.jobForm.value;
-    this.jobService.createJob(formValues).subscribe()
+    let newJobDto = new JobDto(formValues.title,formValues.city,formValues.school,formValues.minSalary,formValues.maxSalary,formValues.jobType,formValues.workMode,formValues.minHours, formValues.maxHours)
+
+    this.jobService.createJob(newJobDto).subscribe()
   }
 
 
