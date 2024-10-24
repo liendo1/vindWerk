@@ -1,35 +1,75 @@
-<div class="max-w-full flex border-2 h-screen">
-  <div class="w-1/2">
-    <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
-      <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-        <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account</h2>
+<div class="flex flex-col items-center w-[464px] ">
+  <div class="flex h-[52px] items-start gap-[10px]">
+    <p class=" poppins text-black font-medium text-2xl leading-normal">
+      Welkom terug
+    </p>
+  </div>
+  <div class="flex flex-col p-8 items-start gap-8 self-stretch rounded-[8px] border-2 border-[#D9D9D9] bg-white shadow-custom">
+    <div class="flex items-center gap-1.5 self-stretch rounded-md">
+      <div class="flex p-2.5 justify-center items-center gap-2.5 flex-[1_0_0] bg-gray-100">
+        <p class="text-black font-medium text-2xl leading-normal poppins">
+          Aanmelder
+        </p>
       </div>
-
-      <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form class="space-y-6">
-          <div>
-            <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
-            <div class="mt-2">
-              <input id="email" name="email" type="email" autocomplete="email"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-            </div>
-          </div>
-
-          <div>
-            <div class="flex items-center justify-between">
-              <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
-            </div>
-            <div class="mt-2">
-              <input id="password" name="password" type="password" autocomplete="current-password"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-            </div>
-          </div>
-          <div>
-            <button type="submit" (click)="submitButton()" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign in</button>
-          </div>
-        </form>
+      <div class="flex p-2.5 justify-center items-center gap-2.5 flex-[1_0_0]">
+        <p class="text-gray-600 font-medium text-2xl leading-normal poppins">
+          Bedrijf
+        </p>
       </div>
     </div>
-  </div>
-  <div class="w-1/2">
-    <img src="/images/eagle3.jpg" alt="Eagle" class="h-full w-full object-cover object-top">
+
+    <div class="flex flex-col items-start gap-6 self-stretch">
+      <div class="flex flex-col items-start self-stretch ">
+        <!-- in here is the email div for the input      -->
+        <div class="flex items-start ">
+          <!--  email input -->
+          <p class="text-black font-medium text-sm leading-normal poppins">
+            Email
+          </p>
+        </div>
+        <input
+          class="flex w-full h-[32px] px-0 py-[10px] pl-[10px] items-start gap-[10px] flex-shrink-0  placeholder:text-[#D9D9D9] placeholder:text-[10px] placeholder:font-medium placeholder:poppins rounded-[10px] border-[2px] border-custom"
+          placeholder="E-mailadres"
+        />
+      </div>
+      <div class="flex flex-col items-start self-stretch ">
+        <!-- in here is the email div for the input      -->
+        <div class="flex justify-between items-end self-stretch">
+          <!-- Your content here -->
+          <p class="text-black font-medium text-sm leading-normal poppins">
+            Password
+          </p>
+          <p class="text-[#757575] font-medium text-[10px] poppins">
+            Wachtwoord vergeten
+          </p>
+        </div>
+        <div class="flex w-full h-[32px] px-0   items-center gap-[10px] flex-shrink-0 border-solid border-2 rounded-[10px] border-[2px] border-custom">
+          <input
+            class="flex-grow h-full px-0  pl-[10px] border-none placeholder:text-[#D9D9D9] placeholder:text-[10px] placeholder:font-medium placeholder:poppins "
+            type="password"
+            placeholder="Password"
+          />
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col items-start gap-6 self-stretch">
+      <label class="flex items-centerh-[15.321px]">
+        <input type="checkbox" class="mr-2">
+        <span class="text-black font-medium text-[9px] poppins">
+        Ik ga akkoord met de <span class="underline">voorwaarden & beleid</span>
+        </span>
+      </label>
+      <button class="flex justify-center items-center self-stretch px-4 py-2 rounded-[8px] border-[2px] border-[#2C2C2C] bg-[#2C2C2C] text-custom">
+        Inloggen
+      </button>
+      <p class="self-stretch text-center text-black font-medium text-[14px] poppins">
+        Heb je geen account? <span class="text-[#0F3DDE]">Registreer</span>
+      </p>
+    </div>
   </div>
 </div>
+
